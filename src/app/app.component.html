@@ -29,7 +29,14 @@
   <button (click)="addElement(text1, text2, text3)">Agregar Elemento</button>
   
   <input type="text" [(ngModel)]="idEliminar" />
-  <button (click)="deleteElement(idEliminar)">Agregar Elemento</button>
+  <button (click)="deleteElement(idEliminar)">Eliminar Elemento</button>
+
+
+  <input type="text" [(ngModel)]="text1"  value="id"/>
+  <input type="text" [(ngModel)]="text2"  value="personaje"/>
+  <input type="text" [(ngModel)]="text3"  value="franquicia"/>
+  <input type="text" [(ngModel)]="text4"  value="descripcion"/>
+  <button (click)="updateElement(text1, text2, text3, text4)">Agregar Elemento</button>
 
 </div>
 
