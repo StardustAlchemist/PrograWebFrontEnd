@@ -1,23 +1,23 @@
 export const storage:any = [
     {
-        Personaje: 'Mario',
-        Franquicia: 'Super Mario',
-        Imagen: 'No hay Imagen',
-        Descripcion: 'Es un plomero italiano hero del reino chapiñon',
-        Video: ''
+        personaje: 'Mario',
+        franquicia: 'Super Mario',
+        imagen: 'No hay Imagen',
+        descripcion: 'Es un plomero italiano hero del reino chapiñon',
+        video: 'https://www.youtube.com/embed/INk1W8OujQI'
     },
     {
-        Personaje: 'Kirby',
-        Franquicia: 'Kirby',
-        Imagen: 'No hay Imagen',
-        Descripcion: 'Hero de DreamLand',
-        Video: 'https://www.youtube.com/embed/1FPJs_c3qY4'
+        personaje: 'Kirby',
+        franquicia: 'Kirby',
+        imagen: 'No hay Imagen',
+        descripcion: 'Hero de DreamLand',
+        video: 'https://www.youtube.com/embed/1FPJs_c3qY4'
     },
     {
-        Personaje: 'Fox',
-        Franquicia: 'Star Fox',
-        Imagen: 'No hay Imagen',
-        Descripcion: 'Lider del Equipo Star Fox',
-        Video: 'https://www.youtube.com/embed/Arw6c0dJHAE'
+        personaje: 'Fox',
+        franquicia: 'Star Fox',
+        imagen: 'No hay Imagen',
+        descripcion: 'Lider del Equipo Star Fox',
+        video: 'https://www.youtube.com/embed/Arw6c0dJHAE'
     }
 ]

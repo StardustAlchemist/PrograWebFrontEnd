@@ -10,12 +10,15 @@
       </tr>
     </thead>
     <tbody>      
-      <tr class="success">
-        <td>Mario</td>
-        <td>Super Mario</td>
-        <td>No hay Imagen</td>
-        <td>Es un personaje de videojuegos popular</td>
-        <td><iframe width="560" height="315" src="https://www.youtube.com/embed/INk1W8OujQI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+      <tr *ngFor= "let item of data" class="success">
+        <td>{{item.personaje}}</td>
+        <td>{{item.franquicia}}</td>
+        <td>{{item.imagen}}</td>
+        <td>{{item.descripcion}}</td>
+        <!--       
+            <td><iframe width="150" height="150" [src]="item.video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+        -->
+        
       </tr>
       
     </tbody>
