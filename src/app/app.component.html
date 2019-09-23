@@ -18,11 +18,15 @@
         <!--       
             <td><iframe width="150" height="150" [src]="item.video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
         -->
-        
       </tr>
       
     </tbody>
   </table>
+
+  <input type="text" [(ngModel)]="text1" />
+  <input type="text" [(ngModel)]="text2" />
+  <input type="text" [(ngModel)]="text3" />
+  <button (click)="addElement(text1, text2, text3)">Agregar Elemento</button>
 </div>
 
 

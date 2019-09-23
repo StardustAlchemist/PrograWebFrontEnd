@@ -12,16 +12,23 @@ export class AppComponent {
   title = 'PrograWebFrontEnd';
 
   public data:any = [];
-  public text:String = '';
+  public text1:String = '';
+  public text2:String =  '';
+  public text3: String = '';
+  
 
   ngOnInit():void {
     this.data = storage;
     console.log(this.data);
   }
 
-  addElement(text: String) {
+  addElement(text1: String, text2: String, text3: String ) {
     this.data.push( {
-      Personaje: text
+      personaje: text1,
+      franquicia: text2,
+      imagen: 'No hay imagen',
+      descripcion: text3, 
+      video: ''
     });
   }
   
