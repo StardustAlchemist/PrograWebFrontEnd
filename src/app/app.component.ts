@@ -15,7 +15,7 @@ export class AppComponent {
   public text1:String = '';
   public text2:String =  '';
   public text3: String = '';
-  
+  public idEliminar: String = '';
 
   ngOnInit():void {
     this.data = storage;
@@ -30,6 +30,15 @@ export class AppComponent {
       descripcion: text3, 
       video: ''
     });
+  }
+
+
+  deleteElement(idEliminar: String) {
+    for(var i = 0; i < this.data.length; i++) {
+      if(this.data[i].personaje === idEliminar) {
+         this.data.splice(i, 1);
+      }
+  }
   }
   
 }
