@@ -24,13 +24,21 @@ export class AppComponent {
   }
 
   addElement(text1: String, text2: String, text3: String, picture: String ) {
-    this.data.push( {
-      personaje: text1,
-      franquicia: text2,
-      imagen: picture,
-      descripcion: text3, 
-      video: ''
-    });
+    if(text1 == null || text2 == null || text3 == null || picture == null) 
+    {
+      alert('Error debe de llenar los campos');
+    }
+    else
+    {
+      this.data.push( {
+        personaje: text1,
+        franquicia: text2,
+        imagen: picture,
+        descripcion: text3, 
+        video: ''
+      });
+    }
+    
   }
 
   definirElemento(id:String)
@@ -47,21 +55,33 @@ export class AppComponent {
 
 
   deleteElement(idEliminar: String) {
-    for(var i = 0; i < this.data.length; i++) {
-      if(this.data[i].personaje === idEliminar) {
-         this.data.splice(i, 1);
-      }
-  }
+    if(confirm("Esta seguro de eliminar a "+idEliminar)) {
+      for(var i = 0; i < this.data.length; i++) {
+        if(this.data[i].personaje === idEliminar) {
+           this.data.splice(i, 1);
+        }
+    }
+    }
+    
   }
 
-  updateElement(text1: String, text2: String, text3: String, text4: String, picture: String) {
-    for(var i = 0; i < this.data.length; i++) {
-      if(this.data[i].personaje === text1) {
-         this.data[i].personaje = text1;
-         this.data[i].franquicia = text2;
-         this.data[i].imagen = text3;
-         this.data[i].descripcion = text4;
-      }
+  updateElement(text1: String, text2: String, text3: String, text4: String) {
+    
+    if(text1 == '' || text2 == '' || text3 == '' || text4 == '') 
+    {
+      alert('Error debe de llenar los campos');
+    }
+    else
+    {
+      for(var i = 0; i < this.data.length; i++) {
+        if(this.data[i].personaje === text1) {
+           this.data[i].personaje = text1;
+           this.data[i].franquicia = text2;
+           this.data[i].imagen = text3;
+           this.data[i].descripcion = text4;
+        }
+    }
+    
   }
 
   console.log(this.data);

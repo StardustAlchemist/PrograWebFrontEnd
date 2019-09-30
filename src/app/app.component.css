@@ -1,0 +1,18 @@
+.centrado{
+    margin:10px auto;
+    display:block;
+}
+
+p {
+    font: oblique bold 250% cursive;
+  }
+
+.estiloboton {
+    font: oblique bold 150% cursive;
+}
+
+.titulo {
+    
+    font:  bold 150% cursive;
+      
+}
