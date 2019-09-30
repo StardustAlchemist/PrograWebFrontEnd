@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row justify-content-center mt-5 pt-5">
+    <div class="col-md-7">
+      <h1 class="display-4">Crear Formulario</h1>
+      <hr class="bg-info">
+      <p>Te invitamos a no se que pumas</p>
+      <p class="text-danger small">Todos los campos son obligatorios</p>
+      <div>
+        <div class="row form-group">
+          <label for="nombre" class="col-form-label col-md-4">Nombre:</label>
+          <div class="col-md-8">
+            <input type="text"  [(ngModel)]="nombre"  class="form-control">
+          </div>
+          <label for="franquicia" class="col-form-label col-md-4">Franquicia:</label>
+          <div class="col-md-8">
+              <input type="text"  [(ngModel)]="franquicia" value="" id="franquicia" class="form-control">
+          </div>
+          <label for="imagen" class="col-form-label col-md-4">Imagen:</label>
+          <div class="col-md-8">
+              <input type="text"  [(ngModel)]="imagen" value="" class="form-control">
+          </div>
+          <label for="descripcion" class="col-form-label col-md-4">Descripcion:</label>
+          <div class="col-md-8">
+              <textarea rows="3" class="form-control"  [(ngModel)]="mensaje"></textarea>
+          </div>
+          <button (click)="addElement(nombre,franquicia,imagen,mensaje)" class="btn btn-info">Añadir</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

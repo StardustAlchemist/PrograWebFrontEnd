@@ -12,25 +12,37 @@ export class AppComponent {
   title = 'PrograWebFrontEnd';
 
   public data:any = [];
-  public text1:String = '';
   public text2:String =  '';
   public text3: String = '';
   public text4: String = '';
   public idEliminar: String = '';
+  public idActualizar: Number = 0;
 
   ngOnInit():void {
     this.data = storage;
     console.log(this.data);
   }
 
-  addElement(text1: String, text2: String, text3: String ) {
+  addElement(text1: String, text2: String, text3: String, picture: String ) {
     this.data.push( {
       personaje: text1,
       franquicia: text2,
-      imagen: 'No hay imagen',
+      imagen: picture,
       descripcion: text3, 
       video: ''
     });
+  }
+
+  definirElemento(id:String)
+  {
+    for(var i = 0; i < this.data.length; i++){
+      if(this.data[i].personaje === id)
+      {
+        console.log(i);
+        this.idActualizar= i;
+
+      }
+    }
   }
 
 
@@ -42,14 +54,23 @@ export class AppComponent {
   }
   }
 
-  updateElement(text1: String, text2: String, text3: String, text4: String) {
+  updateElement(text1: String, text2: String, text3: String, text4: String, picture: String) {
     for(var i = 0; i < this.data.length; i++) {
       if(this.data[i].personaje === text1) {
-         this.data[i].personaje = text2;
-         this.data[i].franquicia = text3;
+         this.data[i].personaje = text1;
+         this.data[i].franquicia = text2;
+         this.data[i].imagen = text3;
          this.data[i].descripcion = text4;
       }
   }
+
+  console.log(this.data);
+  }
+
+
+  prueba(text1: String)
+  {
+    console.log(text1);
   }
   
 }
