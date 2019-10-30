@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {storage} from  '../data/personajes';
+import {DataService} from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -18,9 +19,15 @@ export class AppComponent {
   public idEliminar: String = '';
   public idActualizar: Number = 0;
 
+  constructor(private dataService: DataService) {
+    this.dataService.getData().subscribe(data => {
+      this.data = data;
+      console.log(data);
+    });
+  }
   ngOnInit():void {
-    this.data = storage;
-    console.log(this.data);
+    //this.data = storage;
+    //console.log(this.data);
   }
 
   addElement(text1: String, text2: String, text3: String, picture: String ) {
@@ -92,5 +99,7 @@ export class AppComponent {
   {
     console.log(text1);
   }
+
+  posts = []
   
 }
