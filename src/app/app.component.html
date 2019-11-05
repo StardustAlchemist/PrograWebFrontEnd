@@ -28,7 +28,7 @@
         <td><img src="{{item.imagen}}" alt="Smiley face" height="150" width="150"></td>
         <td class="titulo">{{item.descripcion}}</td>
         <td>No hay video aun... </td>
-        <td><button (click)="deleteElement(item.personaje)" class="btn btn-danger">Eliminar</button>    <button (click)=definirElemento(item.personaje) data-target="#UpdateCharacterModal" class="btn btn-success" data-toggle="modal"><span>Editar</span></button></td>
+        <td><button (click)="deleteElement(item._id)" class="btn btn-danger">Eliminar</button>    <button (click)=definirElemento(item._id,item.nombre) data-target="#UpdateCharacterModal" class="btn btn-success" data-toggle="modal"><span>Editar</span></button></td>
       </tr>
       
     </tbody>
@@ -80,10 +80,11 @@
               <h4 class="modal-title">Editar Personaje</h4>
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
+            <div *ngIf="data.length">
             <div class="modal-body">					
               <div class="form-group">
                 <label>Nombre</label>
-                <input type="text"  name="nombre" [(ngModel)]="data[idActualizar].personaje" class="form-control"required>
+                <input type="text"  name="nombre" [(ngModel)]="data[idActualizar].nombre" class="form-control"required>
               </div>
               <div class="form-group">
                 <label>Franquicia</label>
@@ -100,9 +101,10 @@
             </div>
             <div class="modal-footer">
               <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-              <input (click)="updateElement(data[idActualizar].personaje, data[idActualizar].franquicia, data[idActualizar].imagen, data[idActualizar].descripcion)" data-dismiss="modal" class="btn btn-success" value="Añadir">
+              <input (click)="updateElement(data[idActualizar].nombre, data[idActualizar].franquicia, data[idActualizar].imagen, data[idActualizar].descripcion)" data-dismiss="modal" class="btn btn-success" value="Añadir">
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
