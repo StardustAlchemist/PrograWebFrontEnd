@@ -1,10 +1,10 @@
 
 <div>
-    <img src="../../src/imagenes/smashlogo.png"  alt="Smiley face" height="200" width="800" class="centrado">
+    <img src="../assets/imagenes/smashlogo.png"  alt="Smiley face" height="200" width="800" class="centrado">
 </div>
 <div>
     
-    <a href="#addCharacterModal" class="btn btn-success" data-toggle="modal"><span class="estiloboton">Añadir Personaje</span></a>
+    <a href="#addCharacterModal" class="btn btn-success" data-toggle="modal"><span class="estiloboton">Añadir Personaje</span></a> 
     <p></p>
 </div>
 
@@ -17,7 +17,6 @@
         <th class="titulo">Franquicia</th>
         <th class="titulo">Imagen</th>
         <th class="titulo">Descripcion</th>
-        <th class="titulo">Video Presentacion</th>
         <th class="titulo">Acciones</th> 
       </tr>
     </thead>
@@ -25,10 +24,9 @@
       <tr *ngFor= "let item of data">
         <td><p>{{item.nombre}}</p></td>
         <td><p>{{item.franquicia}}</p></td>
-        <td><img src="{{item.imagen}}" alt="Smiley face" height="150" width="150"></td>
+        <td><img src="http://smashbros-ultimate.com/images/char/{{item.nombre.toLowerCase()}}.png" alt="Smiley face" height="150" width="150"></td>
         <td class="titulo">{{item.descripcion}}</td>
-        <td>No hay video aun... </td>
-        <td><button (click)="deleteElement(item._id)" class="btn btn-danger">Eliminar</button>    <button (click)=definirElemento(item._id,item.nombre) data-target="#UpdateCharacterModal" class="btn btn-success" data-toggle="modal"><span>Editar</span></button></td>
+        <td><button (click)="deleteElement(item._id)" class="btn btn-danger">Eliminar</button>    <button (click)=definirElemento(item._id,item.nombre) data-target="#UpdateCharacterModal" class="btn btn-success" data-toggle="modal"><span>Editar</span></button> 
       </tr>
       
     </tbody>
@@ -54,10 +52,7 @@
 							<label>Franquicia</label>
 							<input type="text" [(ngModel)]="franquicia" class="form-control" required>
 						</div>
-						<div class="form-group">
-							<label>Imagen</label>
-							<input type="text" [(ngModel)]="imagen" class="form-control" required>
-						</div>
+				
 						<div class="form-group">
                 <label>Descripcion</label>
                 <input type="text" [(ngModel)]="descripcion" class="form-control" required>
@@ -65,7 +60,7 @@
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-						<input (click)="addElement(nombre, franquicia,descripcion, imagen)" data-dismiss="modal" class="btn btn-success" value="Añadir">
+						<input (click)="addElement(nombre, franquicia,descripcion, nombre)" data-dismiss="modal" class="btn btn-success" value="Añadir">
 					</div>
 				</div>
 			</div>
@@ -111,4 +106,7 @@
 
 
 
+    
 
+
+      

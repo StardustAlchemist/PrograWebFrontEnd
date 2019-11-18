@@ -21,6 +21,8 @@ export class AppComponent {
   public idEliminar: String = '';
   public idActualizar: Number = 0;
   public idOriginal: String;
+  public Id : String;
+  public respuesta: any;
 
   constructor(private dataService: DataService) {
     this._personaje = new character();
@@ -40,7 +42,7 @@ export class AppComponent {
     this._personaje.nombre = text1;
     this._personaje.franquicia = text2; 
     this._personaje.descripcion = text3;
-    this._personaje.imagen = picture;
+    this._personaje.imagen = "http://smashbros-ultimate.com/images/char/"+picture.toLocaleLowerCase() + ".png";
     
 
     console.log(this._personaje);
@@ -116,6 +118,16 @@ export class AppComponent {
     
   }
 
+  }
+
+  findID(id:String){
+    console.log('entro en el metodo');
+    console.log(id);
+
+    this.dataService.getOneData(id).subscribe(res => {
+      console.log(res);
+      this.respuesta = res;
+    });
   }
   
 }

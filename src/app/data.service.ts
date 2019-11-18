@@ -18,8 +18,8 @@ export class DataService {
      return this.httpClient.get('http://localhost:3000/api/v1/smash');
    }
 
-   getOneData(personaje: Personaje){
-     //return this.httpClient.get('http://localhost:3000/api/v1/smash' + `/${personaje._id}`);
+   getOneData(id:String){
+     return this.httpClient.get('http://localhost:3000/api/v1/smash' + `/${id}`);
    }
 
    addPersonaje(personaje: Personaje){
