@@ -55,9 +55,10 @@ export class AppComponent {
       console.log('entro');
       this.dataService.addPersonaje(this._personaje).subscribe(res =>{
         console.log(res);
+        window.location.reload();
       });
 
-      window.location.reload();
+      
     }
   }
 
@@ -80,9 +81,10 @@ export class AppComponent {
      
       this.dataService.deletePersonaje(idEliminar).subscribe(res => {
         console.log(res);
+        window.location.reload();
       });
       
-      window.location.reload();
+      
 
 
     }
