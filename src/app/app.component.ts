@@ -22,7 +22,7 @@ export class AppComponent {
   public idActualizar: Number = 0;
   public idOriginal: String;
   public Id : String;
-  public respuesta: any;
+  public respuesta: any = [];
 
   constructor(private dataService: DataService) {
     this._personaje = new character();
@@ -125,8 +125,9 @@ export class AppComponent {
     console.log(id);
 
     this.dataService.getOneData(id).subscribe(res => {
-      console.log(res);
-      this.respuesta = res;
+      this.data = [];
+      this.data[0] = res;
+   
     });
   }
   

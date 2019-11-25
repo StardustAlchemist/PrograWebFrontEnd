@@ -5,7 +5,10 @@
 <div>
     
     <a href="#addCharacterModal" class="btn btn-success" data-toggle="modal"><span class="estiloboton">Añadir Personaje</span></a> 
-    <p></p>
+
+    <input type="text"  style="font-size:18pt;height:30px;width:150px; margin-left: 800px" placeholder="Personaje ID" [(ngModel)]="id" required>
+    <a   style="margin-bottom: 15px" (click)="findID(id)" class="btn btn-success" ><span class="estiloboton">Buscar Personaje</span></a> 
+   
 </div>
 
 
@@ -13,6 +16,7 @@
   <table class="table table-dark">
     <thead>
       <tr>
+        <th class="titulo">ID</th>
         <th class="titulo">Personaje</th>
         <th class="titulo">Franquicia</th>
         <th class="titulo">Imagen</th>
@@ -22,6 +26,7 @@
     </thead>
     <tbody>      
       <tr *ngFor= "let item of data">
+        <td class="titulo">{{item._id}}</td>
         <td><p>{{item.nombre}}</p></td>
         <td><p>{{item.franquicia}}</p></td>
         <td><img src="http://smashbros-ultimate.com/images/char/{{item.nombre.toLowerCase()}}.png" alt="Smiley face" height="150" width="150"></td>
@@ -106,7 +111,13 @@
 
 
 
+
+
+
+
+
     
+
 
 
       
